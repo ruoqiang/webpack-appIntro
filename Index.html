@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="学子易贷APP下载页面正式上线了，赶快拿起手机扫描二维码即可下载，活动更多贷款资金、理财收益、投资有保障..." />
+    <meta name="keywords" content="学子易贷 APP下载 二维码 贷款 理财 投资 保障" />
+    <meta name="author" content="ruoqiang" />
+    <title>学子易贷APP下载页</title>
+
+    <link rel="icon" href="../user/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../user/images/favicon.ico" type="image/x-icon" />
+    <script src="webpackoutlib/webpackoutlib.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            isOldIE = function () {
+                return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+            };
+            
+            var _isOldIE = isOldIE();
+           
+            var dynamicLoading = {
+                css: function (path) {
+                    if (!path || path.length === 0) {
+                        throw new Error('argument "path" is required !');
+                    }
+                    var head = document.getElementsByTagName('head')[0];
+                    var link = document.createElement('link');
+                    link.href = path;
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css';
+                    head.appendChild(link);
+                },
+                js: function (path) {
+                    if (!path || path.length === 0) {
+                        throw new Error('argument "path" is required !');
+                    }
+                    var head = document.getElementsByTagName('head')[0];
+                    var script = document.createElement('script');
+                    script.src = path;
+                    script.type = 'text/javascript';
+                    head.appendChild(script);
+                }
+            }
+            if (_isOldIE) {
+                dynamicLoading.css("css/style.css");
+            } //else {
+            //    dynamicLoading.js("webpackoutlib/webpackoutlib.js");
+            //}
+            
+
+
+
+
+            $(".CusAnimateDom").each(function () {
+                var _delay = $(this).attr("data-delay");
+                var _duration = $(this).attr("data-duration");
+                $(this).css("-webkit-animation-delay", (_delay) + "ms");
+                $(this).css("animation-delay", (_delay) + "ms");
+                $(this).css("-webkit-animation-duration", (_duration) + "ms");
+                $(this).css("animation-duration", (_duration) + "ms");
+            });
+
+            //分享微博按钮
+            $(".Js_weibo").on("click", function () {
+                var _shareUrl = "http://www.utlcenter.com/";
+                var _shareImg = "http://www.utlcenter.com/appIntro/images/Share.jpg";
+                var _shareTitle = "下载学子易贷APP助你梦想成真。";
+                window.open("http://s.jiathis.com/?webid=tsina&title=" + encodeURIComponent(_shareTitle) + '&pic=' + encodeURIComponent(_shareImg) + "&url=" + encodeURIComponent(_shareUrl));
+
+            });
+            //分享QQ按钮
+            $(".Js_QQ").on("click", function () {
+                var _shareUrl = "http://www.utlcenter.com/";
+                var _shareImg = "http://www.utlcenter.com/images/logo2.png";
+                var _shareTitle = "下载学子易贷APP助你梦想成真。";
+                var _desc = "赶快也来分享吧。。。";
+                window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' +
+                encodeURIComponent(_shareUrl) + '&title=' + '&pics=' + encodeURIComponent(_shareImg) + '&summary=' + encodeURIComponent(_desc) + '&desc=' + 
+                encodeURIComponent(_shareTitle));
+            });
+
+            $(".logo").on("click", function () {
+                window.location.href = "../user/Index.aspx"
+            });
+            //切换下载二维码
+            $(".Js_erweima_btn_box a").on("click", function () {
+                var _num = $(".Js_erweima_btn_box a").index(this);
+                $(".Js_erweima_btn_box a").removeClass("hover");
+                $(this).addClass("hover");
+                $(".Js_erweima").attr("src", "images/erweima0" + parseInt(_num + 1,10) + ".png")
+            });
+            
+           
+
+            $(window).scroll(function () {
+
+                var _sTop = $(window).scrollTop();
+                if (_sTop > 0) {
+                    $(".pic02_text").removeClass("hide");
+
+                }
+                if (_sTop > 500) {
+                    $(".pic03_text").removeClass("hide");
+
+                }
+                if (_sTop > 975) {
+                    $(".pic04_text").removeClass("hide");
+
+                }
+                if (_sTop > 1475) {
+                    $(".pic05_text").removeClass("hide");
+
+                }
+            });
+           
+        })
+        
+    </script>
+
+    
+</head>
+<body>
+    <div class="wrap">
+
+        <div class="wrap_con">
+            <div class="pic01">
+                <img src="images/pic01.jpg" class="pos" />
+                <div class="w1200 Js_erweima_btn_box">
+                    <img src="images/logo.png" class="logo" />
+                    <img src="images/logo_pic2.png" class="logo_pic2" />
+                    
+                    <a href="javascript:void(0);" class="uploadBtn01 hover"></a>
+                    <a href="javascript:void(0);" class="uploadBtn02"></a>
+                    <img src="images/erweima01.png" class="erweima Js_erweima"/>
+                    <p class="tel">客服电话：400-080-3221 </p>
+                </div>
+                <img src="images/pic01_phone.png" class="pos" />
+
+                <img src="images/pic01_tex01.png" class="pos" />
+                <img src="images/pic01_tex02.png" class="pos" />
+                
+            </div>
+            <div class="pic02">
+                <div class="w1200">
+                    <div class="pic02_text CusAnimateDom FromRightToLeft hide" data-delay="200" data-duration="1000">
+                        <p class="Title">公益体验 为你定制</p>
+                        <p class="desc">益基金、校园大使、社团赞助，千万学子公益计划任性送钱，势不可挡，在这里，我们梦起飞的地方。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pic03">
+                <div class="w1200">
+                    <div class="pic03_text CusAnimateDom FromLeftToRight hide" data-delay="200" data-duration="1000">
+                        <p class="Title">极速体验 因你而变</p>
+                        <p class="desc">1分钟填写资料，3分钟信用评估；2小时审核放款，永远快人一步说贷就贷，就是这么简单随便</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pic04">
+                <div class="w1200">
+                    <div class="pic04_text FromRightToLeft hide" data-delay="200" data-duration="1200">
+                        <p class="Title">安保体验 帮你解忧</p>
+                        <p class="desc">国际安全加密技术，多层防火墙策略；信息准确备份，安全无忧；百亿风险投资，千万风险备用金，贷款有保障</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pic05">
+                <div class="w1200">
+                    <div class="pic05_text CusAnimateDom FromLeftToRight hide" data-delay="200" data-duration="1000">
+                        <p class="Title">灵活体验 让你简便</p>
+                        <p class="desc">随时随地，任性申请；无论何时何地，有钱随时还钱；借钱或还钱，就是这么随心随意</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pic06">
+                <div class="w1200">
+                    <div class="btn_box">
+                        <p>学子易贷-私人银行瞬时贷 </p>
+                        <a href="../user/Index.aspx" class="backhome">回到首页</a>
+                    </div>
+                    <div class="contact_box">
+                        <div class="contact_list ">
+                            <div class="list01_ma_box">
+                                <span><img src="images/erweima01.png" /></span>
+                                <span><img src="images/erweima02.png" /></span>
+                                <span><img src="images/erweima03.png" /></span>
+                            </div>
+                            <p><a href="javascript:void(0);" target="_blank">iPhone版下载</a><a href="javascript:void(0);">Android版下载</a><a href="javascript:void(0);" class="ml0">微信订阅号</a></p>
+                            
+                        </div>
+                        <div class="contact_list list02">
+                            <p>下载学子易贷APP </p>
+                            <p>助你梦想成真 </p>
+                            <p>分享到：<a href="javascript:void(0);" class="weibo Js_weibo"></a><a href="javascript:void(0);" class="QQ Js_QQ"></a></p>
+                        </div>
+                        <div class="contact_list list03">
+                            <p>客服热线：400-080-0221 </p>
+                            <p>客服 QQ：4000803221 </p>
+                            <p>企业邮箱：hu.gq@utlcenter.com</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!--wrap end-->
+
+</body>
+</html>
+
